@@ -49,7 +49,7 @@
   - Add a link to this Markdown/Gherkin file in this readme in the `Assessment answers` section below. Please commit this file/changes to git.
 
 ## Assessment answers:
-1. <Add link to test plan Markdown/Gherkin file from task 1>
-2. <Add link to bug report Markdown/Gherkin file(s) from task 2>
-3. <Add link to test plan Markdown/Gherkin file/section from task 3>
-4. <Add link to test plan Markdown/Gherkin file/section from task 4>
+1. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/testplan.md
+2. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/bugs_todolist.md
+3. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/optionals.md
+4. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/optionals.md
