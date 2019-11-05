@@ -49,7 +49,6 @@
   - Add a link to this Markdown/Gherkin file in this readme in the `Assessment answers` section below. Please commit this file/changes to git.
 
 ## Assessment answers:
-1. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/testplan.md
-2. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/bugs_todolist.md
-3. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/optionals.md
-4. https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/optionals.md
+1. Test Plan: https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/testplan.md
+2. Defect list: https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/bugs_todolist.md
+3. Optional task: https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/optionals.md
