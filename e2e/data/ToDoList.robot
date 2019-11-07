@@ -1,5 +1,5 @@
 *** Variables **
 
-${ENVIRONMENT} =  dev
+${ENVIRONMENT} =  qa
 ${BROWSER} =  chrome
-&{URL}  dev=http://localhost:8080/ qa=http://some.realsite.here/
+&{URL}  dev=http://localhost:8080/ qa=http://e2e-todolist:8081/
