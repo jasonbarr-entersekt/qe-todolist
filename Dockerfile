@@ -5,8 +5,8 @@ WORKDIR /src
 COPY package.json .
 RUN npm install
 
-COPY . .
+COPY views .
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+ENTRYPOINT ["npm", "start"]

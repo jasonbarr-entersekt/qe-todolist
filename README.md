@@ -50,5 +50,5 @@
 
 ## Assessment answers:
 1. Test Plan: https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/testplan.md
-2. Defect list: https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/bugs_todolist.md
+2. Defect list: https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/bugs.md
 3. Optional task: https://github.com/jasonbarr-entersekt/qe-todolist/blob/master/test/optionals.md

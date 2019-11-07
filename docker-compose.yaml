@@ -1,0 +1,21 @@
+version: "2"
+services:
+    node-service:
+        image:  qe-todolist:latest
+        restart: always
+        ports:
+            - 8081:8080
+
+    postman:
+        depends_on:
+            - node-service
+        image: api-todolist:latest
+        volumes:
+            - ./etc/newman:/api/
+
+    e2e:
+        depends_on:
+          - postman
+        image: e2e-todolist:latest
+        volumes:
+            - ./etc/newman:/robot/results/

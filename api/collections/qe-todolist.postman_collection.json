@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "f5fe607e-ff01-44c4-adef-99bc1ed4e20f",
+		"name": "qe-todolist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "78b38e12-acde-4b75-87f6-21bffc96ead1",
+						"exec": [
+							"var html,titleText;",
+							" ",
+							"// load the response body as HTML using cheerio",
+							"// and using cheerio's jQuery like .find API, get the H1 tag",
+							"html = cheerio(responseBody);",
+							"titleText = html.find('#span-todo-0').text();",
+							" ",
+							"// add a test that ensures that there is some H1 content",
+							"tests[\"page must have h1 heading\"] = Boolean(titleText);",
+							"",
+							"pm.test(\"first element should have correct name'\", function () {",
+							"        pm.expect(titleText).to.equal(pm.globals.get(`string`));",
+							"});",
+							"",
+							"pm.test(\"response should be ok\", function() {",
+							"    pm.response.to.be.ok;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5ad08eaa-5730-4147-9c83-9482e92dd5b7",
+						"exec": [
+							"uuid = require('uuid');",
+							"pm.globals.set('string', uuid.v4());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "newtodo",
+							"value": "{{$randomMACAddress}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "newtodo",
+							"value": "{{string}}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/todo/add",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"todo",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e45fed4f-18d8-487d-a76c-3d39d113b4e7",
+						"exec": [
+							"pm.test(`response should be ok`, function() {",
+							"    pm.response.to.be.ok;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "edittodo",
+							"value": "edited",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/todo/edit/0",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"todo",
+						"edit",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b6dfaf02-59f2-43e3-b89d-5e73127ad26a",
+						"exec": [
+							"pm.test(`response should be ok`, function() {",
+							"    pm.response.to.be.ok;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/todo/delete/0",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"todo",
+						"delete",
+						"0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

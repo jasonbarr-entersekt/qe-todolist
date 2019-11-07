@@ -1,0 +1,6 @@
+selenium
+robotframework
+robotframework-seleniumlibrary
+robotframework-imaplibrary
+robotframework-httplibrary
+robotframework-requests
