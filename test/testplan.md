@@ -67,3 +67,10 @@ https://github.com/minimaxir/big-list-of-naughty-strings/blob/master/blns.txt
  * What stage of development is the site in? Look and feel are very bare bones, some nice-to-have features missing, e.g.    meaningful error messages.
  * Would duplicate entries be considered problematic?
 
+# Automated testing
+
+Consists of pure API tests built with Postman, and UI checks using robotframework.
+
+robotframework tests have a hybrid element built-in; some calls are done using http requests to get the UI in a state which can be checked. Should have used a pure js framework (testcafe, cypress etc.), but more familiar with robot so went with that.
+
+update instructions on how to run each individual set of tests...
