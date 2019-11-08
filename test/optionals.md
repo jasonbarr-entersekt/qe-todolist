@@ -30,6 +30,19 @@ Once I have the namespace to work with, I can go ahead and tackle the pods. This
    * kubectl get pods -n xxxxx
    
 That will show me the pods which have been created.
-   
+
+# Rolling updates
+
+It's funny, we do so many rolling updates in my current role, but I've never really been part of making it happen outside of a CI pipeline, so the steps feel a bit alien.
+
+
+
+# Self-healing
+
+This is just an RTFM step, and the k8s docs have a good link which allows me to figure out how to do it. This is how I'd attempt it on my first try:
+
+https://multinode-kubernetes-cluster.readthedocs.io/en/latest/14-k8s-selfhealing.html
+
+
 
 
