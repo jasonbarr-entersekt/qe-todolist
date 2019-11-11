@@ -22,3 +22,27 @@ Lastly, cd to the e2e dir and build that out:
 
   * docker build -t e2e-todolist .
   
+Head back to the root directory and run docker-compose:
+
+ * docker-compose up
+ 
+You should see output like this (this output is from an early version of the robot file):
+
+ ~/stashes/qe-todolist   master ● ?  docker-compose up                                                                                                                                                     ✔  3695  10:53:49
+Creating qe-todolist_node-service_1 ... done
+Creating qe-todolist_postman_1      ... done
+Creating qe-todolist_e2e_1          ... done
+Attaching to qe-todolist_node-service_1, qe-todolist_postman_1, qe-todolist_e2e_1
+node-service_1  |
+node-service_1  | > qe-todolist@0.1.0 start /src
+node-service_1  | > node app.js
+node-service_1  |
+postman_1       | 4.5.5
+e2e_1           | ==============================================================================
+e2e_1           | Todolist :: This is a suite of tests for the Entersekt assessment.
+e2e_1           | ==============================================================================
+e2e_1           | Add a new todolist item :: Create item.                               | FAIL |
+e2e_1           | Test case contains no keywords.
+e2e_1           | ------------------------------------------------------------------------------
+
+At least we know the UI tests are being called properly.
