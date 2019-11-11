@@ -46,3 +46,41 @@ e2e_1           | Test case contains no keywords.
 e2e_1           | ------------------------------------------------------------------------------
 
 At least we know the UI tests are being called properly.
+
+The API tests should give the following output at the command line:
+
+qe-todolist
+
+→ create
+  POST http://localhost:8081/todo/add [200 OK, 1.1KB, 158ms]
+  ✓  first element should have correct name'
+  ✓  response should be ok
+  ✓  page must have h1 heading
+
+→ edit
+  POST http://localhost:8081/todo/edit/0 [200 OK, 1.07KB, 16ms]
+  ✓  response should be ok
+
+→ delete
+  GET http://localhost:8081/todo/delete/0 [200 OK, 726B, 10ms]
+  ✓  response should be ok
+
+┌─────────────────────────┬───────────────────┬───────────────────┐
+│                         │          executed │            failed │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              iterations │                 1 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│                requests │                 3 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│            test-scripts │                 3 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│      prerequest-scripts │                 1 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              assertions │                 5 │                 0 │
+├─────────────────────────┴───────────────────┴───────────────────┤
+│ total run duration: 292ms                                       │
+├─────────────────────────────────────────────────────────────────┤
+│ total data received: 2.29KB (approx)                            │
+├─────────────────────────────────────────────────────────────────┤
+│ average response time: 61ms [min: 10ms, max: 158ms, s.d.: 68ms] │
+└─────────────────────────────────────────────────────────────────┘
