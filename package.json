@@ -10,7 +10,7 @@
     "chai": "4.0.2",
     "chai-http": "3.0.0",
     "istanbul": "0.4.5",
-    "jsdom": "^11.1.0",
+    "jsdom": "^16.5.0",
     "mocha": "^3.4.2"
   },
   "dependencies": {
